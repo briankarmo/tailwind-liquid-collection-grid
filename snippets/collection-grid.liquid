@@ -1,0 +1,13 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+  {% for collection in collections %}
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+      <a href="{{ collection.url }}">
+        <img src="{{ collection.image | img_url: '600x' }}" alt="{{ collection.title }}" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h2 class="text-xl font-semibold text-gray-800">{{ collection.title }}</h2>
+          <p class="text-gray-500 mt-1">{{ collection.description | truncate: 100 }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
